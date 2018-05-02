@@ -1,1 +1,0 @@
-# Sollacristal test project
