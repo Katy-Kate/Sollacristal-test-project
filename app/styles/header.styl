@@ -1,0 +1,186 @@
+.header
+  position fixed
+  top 0
+  z-index 30
+  -ms-grid-columns 1/-1
+  -ms-grid-row 1
+  width 100%
+  max-width maxw
+  height 40px
+  padding 0 gutter
+  background -webkit-gradient(linear, left top, right top, color-stop(20%, c_red), to(c_light-red))
+  background -webkit-linear-gradient(left, c_red 20%, c_light-red 100%)
+  background -o-linear-gradient(left, c_red 20%, c_light-red 100%)
+  background linear-gradient(to right, c_red 20%, c_light-red 100%)
+  border-radius 0 0 20px 20px
+  &_logo
+    float left
+    height 40px
+    margin-right 30px
+    &__img
+      width auto
+      height 40px
+  &_nav
+    grid-template-columns repeat(5,1fr)
+    -ms-grid-columns 1fr 1fr 1fr 1fr 1fr
+    grid-gap 10px
+    text-align center
+    align-items center
+    -webkit-align-items center
+    height 40px
+    &__item
+      display flex
+      display -ms-flexbox
+      justify-content center
+      align-items center
+      height 40px
+      color lighten(c_orange, 60%)
+      text-decoration none
+      -webkit-transition: all time_trans ease
+      -moz-transition: all time_trans ease
+      -ms-transition: all time_trans ease
+      -o-transition: all time_trans ease
+      transition: all time_trans ease
+      cursor pointer
+      &:hover
+        color c_orange
+      &:nth-child(1)
+        -ms-grid-column 1
+      &:nth-child(2)
+        -ms-grid-column 2
+      &:nth-child(3)
+        -ms-grid-column 3
+      &:nth-child(4)
+        -ms-grid-column 4
+      &:nth-child(5)
+        -ms-grid-column 5
+
+.mobile-nav-button,.mobile-menu
+  display none
+
+//--------------------------------------------- media
+
+@media all and (max-width: w_sm)
+  .header_nav
+    position absolute
+    left 0
+    top 80px
+    z-index 4
+    display none
+    justify-content center
+    flex-direction column
+    -webkit-box-pack center
+    -ms-flex-pack center
+    -webkit-box-orient vertical
+    -webkit-box-direction normal
+    -ms-flex-direction column
+    width 100%
+    padding 10px 0
+    box-sizing content-box
+    text-align center
+    background rgba(38, 56, 45, 0.74)
+    &__item
+      padding 10px 10px
+  .mobile-menu
+    position absolute
+    top 0
+    right -100%
+    z-index 50
+    display block
+    max-width 500px
+    width 100%
+    height 100vh
+    background c_gray-light
+    transition 0.6s ease
+    -o-transition 0.6s ease
+    -moz-transition 0.6s ease
+    -webkit-transition 0.6s ease
+    opacity 0
+    ul
+      position relative
+      top 50%
+      padding 0
+      transform translateY(-50%)
+      -webkit-transform translateY(-50%)
+      -ms-transform translateY(-50%)
+      li
+        list-style: none
+        a,
+        .header_nav__item--aside-left,
+        .header_nav__item--aside-right
+          position relative
+          display block
+          width: 100%
+          margin 0 auto
+          text-align center
+          text-decoration none
+          color c_light-red
+          font-size 21px
+          line-height 39px
+          text-transform uppercase
+          overflow hidden
+          &:after
+            position absolute
+            right -100%
+            top 0
+            z-index -1
+            width 100%
+            height 100%
+            content ''
+            background: c_red
+            transition all 0.4s ease
+            -o-transition all 0.4s ease
+            -webkit-transition all 0.4s ease
+            -moz-transition all 0.4s ease
+          &:hover
+            color #ffffff
+            &:after
+              right 0
+    &--open
+      right 0
+      opacity 1
+  .mobile-nav-button
+    position absolute
+    right 0
+    top 0
+    z-index 9999
+    display inherit
+    width 33px
+    height 30px
+    margin 10px 20px 0 10px
+    cursor pointer
+    &__line
+      position relative
+      width 100%
+      height 2px
+      background c_orange
+      transition all 1s ease
+      -o-transition all 1s ease
+      -webkit-transition all 1s ease
+      -moz-transition all 1s ease
+      &:nth-of-type(2)
+        margin 0.5rem 0
+      &--1
+        position absolute
+        top 13px
+        transform rotate(45deg)
+        -o-transform rotate(45deg)
+        -moz-transform rotate(45deg)
+        -webkit-transform rotate(45deg)
+        -ms-transform rotate(45deg)
+      &--2
+        display none
+      &--3
+        position absolute
+        top 13px
+        transform rotate(135deg)
+        -o-transform rotate(45deg)
+        -moz-transform rotate(45deg)
+        -webkit-transform rotate(45deg)
+        -ms-transform rotate(45deg)
+
+
+
+
+
+

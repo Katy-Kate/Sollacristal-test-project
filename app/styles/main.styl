@@ -1,0 +1,206 @@
+.main
+  position relative
+  grid-template-columns 1fr 200px
+  grid-template-rows 100px auto
+  -ms-grid-columns 1fr 20px 200px
+  -ms-grid-rows 100px 20px auto
+  -ms-grid-column 1
+  -ms-grid-row 2
+  grid-gap gutter
+  padding gutter
+  grid-template-areas ' page-description page-description '\
+  ' main-content main-right '
+  &_page-description
+    -ms-grid-columns 1/-1
+    -ms-grid-row 1
+    grid-area page-description
+    -webkit-align-items center
+    align-items center
+    height 100px
+    display -ms-flexbox
+  &_content
+    -ms-grid-columns 1/-1
+    -ms-grid-row 3
+    grid-area main-content
+  &_right
+    position relative
+    -ms-grid-column 3
+    -ms-grid-row 3
+    z-index 0
+    width 200px
+    &__wrapper
+      height 100%
+      width 200px
+      grid-area main-right
+      padding gutter
+      background c_light-red
+      border-radius 10px
+
+.right-form
+  position relative
+  grid-template-rows auto
+  -ms-grid-rows auto 10px auto 10px auto 10px auto 10px
+  grid-gap 10px
+  margin-top 10px
+  &_submit
+    -ms-grid-row 11
+    text-align right
+    padding-top 5px
+  &_text
+    -ms-grid-row 1
+    font-size 1.5rem
+    line-height 1.3
+    border-bottom 1px solid
+    text-align center
+    color lighten(c_orange, 60%)
+  &_title
+    -ms-grid-row 3
+    text-align center
+    color lighten(c_orange, 60%)
+  &_input
+    &--name
+      -ms-grid-row 5
+    &--email
+      -ms-grid-row 7
+    &--textarea
+      -ms-grid-row 9
+.services-gallery
+  grid-template-columns repeat(4,minmax(170px,1fr))
+  -ms-grid-columns 1fr 20px 1fr 20px 1fr 20px 1fr
+  grid-gap gutter
+  margin gutter 0
+  &_item
+    position relative
+    display grid
+    display -ms-flexbox
+    height 30vh
+    align-items center
+    text-align center
+    background-position center
+    background-size cover
+    text-decoration none
+    border-radius 10px
+    >*
+      z-index 1
+    &::before
+      content ""
+      position absolute
+      top 0
+      bottom 0
+      right 0
+      left 0
+      background c_dark
+      border-radius 10px
+      opacity .3
+    &:hover
+      &::before
+        opacity 0
+        -webkit-transition: all time_trans ease
+        -moz-transition: all time_trans ease
+        -ms-transition: all time_trans ease
+        -o-transition: all time_trans ease
+        transition: all time_trans ease
+      .services-gallery_item__text
+        margin-top 40%
+        opacity 0
+        -webkit-transition: all time_trans ease
+        -moz-transition: all time_trans ease
+        -ms-transition: all time_trans ease
+        -o-transition: all time_trans ease
+        transition: all time_trans ease
+
+    &--1
+      -ms-grid-column 1
+      background-image url("../images/1.jpg")
+      -webkit-background-image url("../images/1.jpg")
+    &--2
+      -ms-grid-column 3
+      background-image url("../images/2.jpg")
+      -webkit-background-image url("../images/2.jpg")
+    &--3
+      -ms-grid-column 5
+      background-image url("../images/3.jpg")
+      -webkit-background-image url("../images/3.jpg")
+    &--4
+      -ms-grid-column 7
+      background-image url("../images/4.jpg")
+      -webkit-background-image url("../images/4.jpg")
+    &__text
+      display block
+      width 100%
+      padding .2em
+      font-size 1.6rem
+      color #ffffff
+      background c_light-red
+
+.advantages
+  position relative
+  display grid
+  display -ms-flexbox
+  min-height 150px
+  margin gutter 0
+  -webkit-background-image url("../images/1.jpg")
+  background-image url("../images/1.jpg")
+  background-position center
+  background-attachment fixed
+  background-size cover
+  padding:gutter
+  border-radius gutter
+  &::before
+    content ""
+    position absolute
+    top 0
+    bottom 0
+    right 0
+    left 0
+    background c_dark
+    border-radius gutter
+    opacity .3
+  >*
+    z-index 1
+  &_block
+    position relative
+    width 100%
+    height 100%
+    display grid
+    display -ms-flexbox
+    align-content center
+    justify-content center
+    flex-direction column
+    //min-height 150px
+    align-items center
+    text-align center
+    &__text
+      -ms-grid-row 1
+      color #fff
+      font-weight bold
+    &__btn-wrapper
+      -ms-grid-row 2
+
+//  media-queries
+
+@media all and (min-width: w_sm)
+
+  .main_right__wrapper.fixed
+      position fixed
+      top 40px
+      z-index 0
+@media all and (max-width: w_sm)
+  .main
+    position relative
+    grid-template-columns 1fr
+    -ms-grid-columns 1fr
+    grid-template-areas ' page-description '\
+      ' main-content '\
+      ' main-right '
+    &_content
+      -ms-grid-row 3
+      -ms-grid-column 1
+    &_right
+      width 100%
+      -ms-grid-row 4
+      -ms-grid-column 1
+      &__wrapper
+        width 100%
+  .right-form
+    margin-top 0

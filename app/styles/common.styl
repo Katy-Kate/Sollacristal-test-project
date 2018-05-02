@@ -1,0 +1,142 @@
+.clearfix:before,
+.clearfix:after
+   content ' '
+   display table
+
+.clearfix:after
+  clear both
+*
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+
+@keyframes bounceInUp
+  from,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+  from
+    opacity: 0
+    transform: translate3d(0, 3000px, 0)
+  60%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+  75%
+    transform: translate3d(0, 10px, 0)
+  90%
+    transform: translate3d(0, 0, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+html, body
+  position relative
+  display grid
+  display -ms-flexbox
+  justify-content center
+  -webkit-box-packcenter
+  -ms-flex-pack center
+  font-family my_fonts
+  font-size 16px
+  color: #000
+  scroll-behavior smooth
+  min-width 320px
+  overflow-x hidden
+
+ //fonts
+ h1,.h1,
+ h2,.h2,
+ h3,.h3,
+ h4,.h4
+    font-family my_fonts_1
+
+
+h1,.h1
+  margin-bottom .42em
+  font-size 2.37rem
+  font-weight bold
+  color c_light-red
+
+h2,.h2
+  margin-bottom .33em
+  font-size 2.18rem
+  color c_light-red
+
+h3,.h3
+  margin-bottom .2em
+  font-size 1.75rem
+  color c_orange
+p
+  margin-bottom .4rem
+a
+  text-decoration none
+  color: c_orange
+
+.grid
+  display grid
+  display -ms-grid
+  display -webkit-g
+
+
+header
+  grid-area header
+.main
+  grid-area main
+footer
+  grid-area footer
+
+#wrapper
+  display grid
+  display -ms-grid
+  min-height 100vh
+  grid-template-columns minmax(320px,1024px)
+  -ms-grid-columns minmax(320px,1024px)
+  grid-template-rows 40px auto 30px
+  -ms-grid-rows 40px auto 30px
+  grid-template-areas ' header '\
+    ' main '\
+    ' footer '
+
+.btn
+  display inline-block
+  font-size 13px
+  padding .5em 1.3em
+  background linear-gradient(-20deg, c_light-red 0%, c_orange 100%)
+  background -webkit-linear-gradient(110deg, c_light-red 0%, c_orange 100%)
+  background -o-linear-gradient(110deg, c_light-red 0%, c_orange 100%)
+  border 2px solid #fff
+  border-radius 12px
+  color #fff
+  text-transform uppercase
+  text-decoration none
+  letter-spacing 1px
+  outline none
+  -webkit-transition: all time_trans ease
+  -moz-transition: all time_trans ease
+  -ms-transition: all time_trans ease
+  -o-transition: all time_trans ease
+  transition: all time_trans ease
+  &:hover
+    background linear-gradient(-20deg, c_red 0%, c_orange 100%)
+    background -webkit-linear-gradient(-20deg, c_red 0%, c_orange 100%)
+    background -o-linear-gradient(-20deg, c_red 0%, c_orange 100%)
+
+input
+  width 100%
+  padding 5px
+  border none
+  border-radius 5px
+  &:focus
+    outline none
+    -webkit-transition: all time_trans ease
+    -moz-transition: all time_trans ease
+    -ms-transition: all time_trans ease
+    -o-transition: all time_trans ease
+    transition: all time_trans ease
+    background linear-gradient(-20deg, c_light-red 0%, c_orange 100%)
+    background -webkit-linear-gradient(-20deg, c_light-red 0%, c_orange 100%)
+    background -o-linear-gradient(-20deg, c_light-red 0%, c_orange 100%)
+
+

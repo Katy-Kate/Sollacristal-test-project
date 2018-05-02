@@ -1,0 +1,104 @@
+.aside
+  position fixed
+  top 40px
+  z-index 2
+  width 300px
+  height 100%
+  padding gutter
+  background lighten(c_gray-light,50%)
+  &_close
+    display inline-block
+    font-family sans-serif
+    color c_orange
+    cursor pointer
+    font-size 1.8rem
+    &--right
+      float   left
+    &--left
+      float   right
+  &_content
+    position relative
+    top 50%
+    transform translateY(-50%)
+    -webkit-transform translateY(-50%)
+    -ms-transform translateY(-50%)
+    align-items center
+    text-align center
+    grid-gap 10px
+    *:not(.h2)
+      color #000000
+    &__title
+      text-transform uppercase
+    &__title-2
+      font-size 1.5rem
+      margin-top .5em
+  &-right
+    transform translateX(0)
+    -webkit-transform translateX(0)
+    -ms-transform translateX(0)
+    min-height 370px
+    visibility hidden
+    border-radius 20px 0 0 20px
+    &--wrapper
+      position absolute
+      right 0
+      width 0
+    &--open
+      transform translateX(-100%)
+      -webkit-transform translateX(-100%)
+      -ms-transform translateX(-100%)
+      visibility visible
+      -webkit-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      -moz-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      -ms-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      -o-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+  &-left
+    transform translateX(-100%)
+    -webkit-transform translateX(-100%)
+    -ms-transform translateX(-100%)
+    min-height 350px
+    visibility hidden
+    border-radius 0 20px 20px 0
+    .aside_content
+      display grid
+      display -ms-grid
+      -ms-grid-columns 1fr
+      -ms-grid-rows auto 10px auto 10px auto 10px auto 10px auto 10px auto 10px auto
+      &__title--left
+        -ms-grid-row 1
+        display block
+      a:nth-of-type(1)
+        -ms-grid-row 3
+        display block
+      a:nth-of-type(2)
+        -ms-grid-row 5
+        display block
+      a:nth-of-type(3)
+        -ms-grid-row 7
+        display block
+      a:nth-of-type(4)
+        -ms-grid-row 9
+        display block
+      a:nth-of-type(5)
+        -ms-grid-row 11
+        display block
+    &--wrapper
+      position absolute
+      left  0
+      width 0
+    &--open
+      transform translateX(0)
+      -webkit-transform translateY(0)
+      -ms-transform translateY(0)
+      visibility visible
+      -webkit-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      -moz-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      -ms-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      -o-transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+      transition: all time_trans cubic-bezier(0.39, 0.58, 0.57, 1)
+
+@media all and (max-width: w_sm)
+  .aside
+    top 0
+    z-index 100
